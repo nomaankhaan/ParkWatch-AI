@@ -29,7 +29,6 @@ pickle
 
 - `main.py` - The main script for real-time parking spot detection
 - `util.py` - Utility functions for spot detection and classification
-- `train_model.py` - Script for training the SVM classifier
 - `model.p` - Trained model file (generated after training)
 - `mask_1920_1080.png` - Mask file defining parking spot areas
 
@@ -43,31 +42,10 @@ pickle
 
 ## Usage
 
-1. Create a mask for your parking lot video:
-   - Define parking spots as white rectangles on a black background
-   - Save as 'mask_1920_1080.png' (or update the path in main.py)
-
-2. Train the model:
-```bash
-python train_model.py
-```
-
-3. Run the detection system:
+Run the detection system:
 ```bash
 python main.py
 ```
-
-## Training the Model
-
-The model is trained on two categories of images:
-- `empty`: Images of empty parking spots
-- `not_empty`: Images of occupied parking spots
-
-The training script (`train_model.py`):
-- Resizes all images to 15x15 pixels
-- Performs train/test split (80/20)
-- Uses GridSearchCV to find optimal SVM parameters
-- Saves the best model to 'model.p'
 
 ## Performance Optimization
 
